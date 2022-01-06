@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
-from Actions import ACTIONS
+from Classes.Actions import ACTIONS
 
 
 # TODO: Comment this thing

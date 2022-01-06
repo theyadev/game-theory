@@ -1,6 +1,6 @@
 from Styles.Default import Style
 
-from Actions import ACTIONS
+from Classes.Actions import ACTIONS
 
 
 class Copy(Style):
@@ -17,7 +17,7 @@ class Copy(Style):
             return ACTIONS.COOPERATE
 
         # -2 is because the round starts at 1 and not 0, and we want the round before the currentRound
-        lastRound = self.player.game.history[self.player.game.currentRound - 2] 
+        lastRound = self.player.game.history[self.player.game.currentRound - 2]
 
         # index == 0 or 1, doing a "not 0" will return True and doing a "not 1" will return False
         # In python we can convert Bool to Int (False == 0 and True == 1)

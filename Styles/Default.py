@@ -1,6 +1,6 @@
 from random import random
 
-from Actions import ACTIONS
+from Classes.Actions import ACTIONS
 
 
 class Style:
