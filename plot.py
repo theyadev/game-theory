@@ -33,7 +33,6 @@ def showGraph(game):
 
         ax.set(ylabel="Points")
         ax.grid()
-        ax.legend()
         ax.set_ylim([0, np.max(scores)+5])
         ax.set_xticks(rounds)
 
