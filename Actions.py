@@ -1,0 +1,3 @@
+class ACTIONS:
+    COOPERATE = "COOPERATE"
+    BETRAY = "BETRAY"
