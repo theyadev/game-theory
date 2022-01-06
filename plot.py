@@ -10,6 +10,8 @@ import matplotlib
 from Actions import ACTIONS
 
 
+# TODO: Comment this thing
+
 def showGraph(game):
     rounds = np.arange(len(game.history))+1
 

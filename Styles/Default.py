@@ -4,7 +4,15 @@ from Actions import ACTIONS
 
 
 class Style:
-    def __init__(self, player,  c: float = None) -> None:
+    """
+        The base for every playstyle\n
+
+        keywords arguments:\n
+        player -- a Player instance\n
+        c -- Probability of choosing the action Cooperate (default: None)
+    """
+
+    def __init__(self, player, c: float = None) -> None:
         self.player = player
         self.cooperate = c
 
