@@ -2,21 +2,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
-
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib
-
 from Classes.Actions import ACTIONS
 
 
 # TODO: Comment this thing
 
 def showGraph(game):
-    rounds = np.arange(len(game.history))+1
+    rounds = np.arange(len(game.history)) + 1
 
     scores = [[round[i]['score'] for round in game.history] for i in range(2)]
-    classes = [[1*(round[i]['action'] == ACTIONS.COOPERATE)
+    classes = [[1 * (round[i]['action'] == ACTIONS.COOPERATE)
                 for round in game.history] for i in range(2)]
 
     playerColors = ["orange", "blue"]
@@ -33,7 +28,7 @@ def showGraph(game):
 
         ax.set(ylabel="Points")
         ax.grid()
-        ax.set_ylim([0, np.max(scores)+5])
+        ax.set_ylim([0, np.max(scores) + 5])
         ax.set_xticks(rounds)
 
         ax.set_title(game.players[i].style)
