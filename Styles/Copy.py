@@ -2,6 +2,8 @@ from Styles.Default import Style
 
 from Classes.Actions import ACTIONS
 
+from utils.getOtherPlayerActions import getOtherPlayerActions
+
 
 class Copy(Style):
     """
@@ -12,21 +14,12 @@ class Copy(Style):
         super().__init__(player)
 
     def getAction(self):
-        # Copy playstyle always start with Cooperate
-        if self.player.game.currentRound == 1:
+        otherPlayerActions = getOtherPlayerActions(self.player)
+
+        if len(otherPlayerActions) == 0:
             return ACTIONS.COOPERATE
 
-        # -2 is because the round starts at 1 and not 0, and we want the round before the currentRound
-        lastRound = self.player.game.history[self.player.game.currentRound - 2]
-
-        # index == 0 or 1, doing a "not 0" will return True and doing a "not 1" will return False
-        # In python we can convert Bool to Int (False == 0 and True == 1)
-        # So, "not 0" == True, "int(True)" == 1, that's how we get the other player index
-        otherPlayerIndex = int(not self.player.index)
-
-        otherPlayerAction = lastRound[otherPlayerIndex]["action"]
-
-        return ACTIONS.COOPERATE if otherPlayerAction == ACTIONS.COOPERATE else ACTIONS.BETRAY
+        return ACTIONS.COOPERATE if otherPlayerActions[-1] == ACTIONS.COOPERATE else ACTIONS.BETRAY
 
     def __str__(self) -> str:
         return "Copieur"

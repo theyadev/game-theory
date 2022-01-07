@@ -1,7 +1,7 @@
 import json
 
 
-def readCustomPlaystyles():
+def readPlaystyles(path: str):
     """
         Read the json containing all basic playstyles
     """
@@ -9,7 +9,7 @@ def readCustomPlaystyles():
     customStyles = None
 
     try:
-        with open("./playstyles.json", "r") as f:
+        with open(path, "r") as f:
             customStyles = json.load(f)
     except FileNotFoundError:
         pass

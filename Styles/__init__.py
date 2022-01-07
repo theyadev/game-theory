@@ -1,23 +1,16 @@
 from Styles.Copy import Copy
 from Styles.User import UserInput
 
-from utils.json import readCustomPlaystyles
-from utils.createClass import createProbaClass, createSchemaClass
+from utils.createPlaystyles import createPlaystyles
 
-customStyles = readCustomPlaystyles()
+playstyles = {}
 
-if customStyles is not None:
-    for name, value in customStyles.items():
-        isValueNumeric = isinstance(value, (int, float))
+defaults = createPlaystyles("./playstylesDefault.json")
+customs = createPlaystyles("./playstylesCustom.json")
 
-        # TODO: Comment why did I use locals
-        if isValueNumeric:
-            locals()[name] = createProbaClass(name, value)
-            continue
+playstyles.update(defaults)
+playstyles.update(customs)
 
-        isValueAPlaystyle = all(
-            l for l in value if l.upper() == "C" or l.upper() == "B")
-
-        if isValueAPlaystyle:
-            locals()[name] = createSchemaClass(name, value)
-            continue
+if len(playstyles) > 0:
+    for name, classe in playstyles.items():
+        locals()[name] = classe
