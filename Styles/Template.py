@@ -22,6 +22,7 @@
             - history of rounds = self.player.game.history
 """
 
+from typing import Literal
 from Styles.Default import Style
 
 from Classes.Actions import ACTIONS
@@ -30,15 +31,17 @@ from Classes.Actions import ACTIONS
 # from utils.getOtherPlayerActions import getOtherPlayerActions
 
 # Change the name of the class
+
+
 class Name(Style):
     """
         Please describe what the playstyle do
     """
 
-    def __init__(self, player) -> None:
+    def __init__(self, player):
         super().__init__(player)
 
-    def getAction(self):
+    def getAction(self) -> Literal:
         pass
 
         # You must return ACTIONS.COOPERATE or ACTIONS.BETRAY
