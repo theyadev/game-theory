@@ -5,7 +5,6 @@ class Points:
     """
         Contains all points values
     """
-    
     BOTH_COOPERATE = 3
     BOTH_BETRAY = 1
 
