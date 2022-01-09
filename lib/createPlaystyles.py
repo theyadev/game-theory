@@ -16,7 +16,6 @@ def createPlaystyles(path: str):
         for name, value in customStyles.items():
             isValueNumeric = isinstance(value, (int, float))
 
-            # TODO: Comment why did I use locals
             if isValueNumeric:
                 classes[name] = createProbaClass(name, value)
                 continue
