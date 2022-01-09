@@ -1,6 +1,6 @@
 
-from utils.json import readPlaystyles
-from utils.createClass import createProbaClass, createSchemaClass
+from lib.json import readPlaystyles
+from lib.createClass import createProbaClass, createSchemaClass
 
 
 def createPlaystyles(path: str):

@@ -1,16 +1,11 @@
 from Styles.Copy import Copy
 from Styles.User import UserInput
 
-from utils.createPlaystyles import createPlaystyles
+from lib.createPlaystyles import createPlaystyles
 
-playstyles = {}
+__playstyles__ = createPlaystyles("./playstylesDefault.json")
+__playstyles__.update(createPlaystyles("./playstylesCustom.json"))
 
-defaults = createPlaystyles("./playstylesDefault.json")
-customs = createPlaystyles("./playstylesCustom.json")
-
-playstyles.update(defaults)
-playstyles.update(customs)
-
-if len(playstyles) > 0:
-    for name, classe in playstyles.items():
+if len(__playstyles__) > 0:
+    for name, classe in __playstyles__.items():
         locals()[name] = classe

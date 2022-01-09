@@ -2,7 +2,7 @@ from Styles.Default import Style
 
 from Classes.Actions import ACTIONS
 
-from utils.getOtherPlayerActions import getOtherPlayerActions
+from lib.getOtherPlayerActions import getOtherPlayerActions
 
 
 class Copy(Style):

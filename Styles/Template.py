@@ -28,7 +28,7 @@ from Styles.Default import Style
 from Classes.Actions import ACTIONS
 
 # Import this only if you need the other player actions
-# from utils.getOtherPlayerActions import getOtherPlayerActions
+# from lib.getOtherPlayerActions import getOtherPlayerActions
 
 # Change the name of the class
 
