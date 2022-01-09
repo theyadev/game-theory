@@ -1,9 +1,10 @@
-import os 
+import os
 import importlib
 
-def getComplexPlaystyles():
+
+def getComplexPlaystyles(pathToDirectory: str):
     """
-        Create an object of {name: class} based on the Styles directory.
+        Create an object of {name: class} based on a directory.
     """
 
     playstyles = {}
@@ -13,11 +14,12 @@ def getComplexPlaystyles():
 
     # Get all .py files in the Styles directory
     files = [fileName for fileName in os.listdir(
-        "./Styles") if not fileName in __ignore__ and fileName.endswith(".py")]
+        pathToDirectory) if not fileName in __ignore__ and fileName.endswith(".py")]
 
     for fileName in files:
         moduleName = fileName[:-3]
-        
-        playstyles[moduleName] = importlib.import_module("Styles." + moduleName).Name
-    
+
+        playstyles[moduleName] = importlib.import_module(
+            "Styles." + moduleName).Playstyle
+
     return playstyles

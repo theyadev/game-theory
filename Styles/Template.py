@@ -31,7 +31,7 @@ from Classes.Actions import ACTIONS
 # from lib.getOtherPlayerActions import getOtherPlayerActions
 
 
-class Name(Style):
+class Playstyle(Style):
     """
         Please describe what the playstyle do
     """

@@ -3,7 +3,7 @@ from Styles.Default import Style
 from Classes.Actions import ACTIONS
 
 
-class Name(Style):
+class Playstyle(Style):
     """
         It will ask for user input to play
     """

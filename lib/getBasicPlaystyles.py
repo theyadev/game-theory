@@ -3,12 +3,12 @@ from lib.json import readPlaystyles
 from lib.createClass import createProbaClass, createSchemaClass
 
 
-def createPlaystyles(path: str):
+def getBasicPlaystyles(pathToJSON: str):
     """
         Create an object of {name: class} based on a .json
     """
 
-    customStyles = readPlaystyles(path)
+    customStyles = readPlaystyles(pathToJSON)
 
     classes = {}
 

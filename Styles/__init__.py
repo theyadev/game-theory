@@ -1,8 +1,10 @@
-from lib.createPlaystyles import createPlaystyles
+from lib.getBasicPlaystyles import getBasicPlaystyles
 from lib.getComplexPlaystyles import getComplexPlaystyles
 
-playstyles = createPlaystyles("./playstylesDefault.json")
+playstyles = {}
 
-playstyles.update(createPlaystyles("./playstylesCustom.json"))
-playstyles.update(getComplexPlaystyles())
+playstyles.update(getBasicPlaystyles("./playstylesDefault.json"))
+playstyles.update(getBasicPlaystyles("./playstylesCustom.json"))
+
+playstyles.update(getComplexPlaystyles("./Styles"))
 

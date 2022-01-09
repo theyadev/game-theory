@@ -5,7 +5,7 @@ from Classes.Actions import ACTIONS
 from lib.getOtherPlayerActions import getOtherPlayerActions
 
 
-class Name(Style):
+class Playstyle(Style):
     """
         It will play the same action that the other player played last turn
     """
