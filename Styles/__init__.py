@@ -1,11 +1,8 @@
-from Styles.Copy import Copy
-from Styles.User import UserInput
-
 from lib.createPlaystyles import createPlaystyles
+from lib.getComplexPlaystyles import getComplexPlaystyles
 
-__playstyles__ = createPlaystyles("./playstylesDefault.json")
-__playstyles__.update(createPlaystyles("./playstylesCustom.json"))
+playstyles = createPlaystyles("./playstylesDefault.json")
 
-if len(__playstyles__) > 0:
-    for name, classe in __playstyles__.items():
-        locals()[name] = classe
+playstyles.update(createPlaystyles("./playstylesCustom.json"))
+playstyles.update(getComplexPlaystyles())
+

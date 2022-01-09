@@ -2,7 +2,7 @@
     Use this template to create complex playstyles.
 
     What do you need to do:
-        - Rename the name of the class and the name in the __str__
+        - Rename the name of the class in the __str__
         - Add a little description
         - Create your playstyle in getAction method and return an action (ACTIONS.COOPERATE or ACTIONS.BETRAY)
         - Remove every comments unless the description
@@ -29,8 +29,6 @@ from Classes.Actions import ACTIONS
 
 # Import this only if you need the other player actions
 # from lib.getOtherPlayerActions import getOtherPlayerActions
-
-# Change the name of the class
 
 
 class Name(Style):
